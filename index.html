@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Budget App</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"> -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container p-1">
+    <div class="container-left">
+
+      <div class="input-container bg-opaque mb-1">
+
+        <div class="budget-container mtb-1">
+          <h2>Monthly Budget </h2>
+          <div class="input-seg mtb-1">
+            <label for="budget">$ </label>
+            <input class="input" id="budget" name="budget" type="number" placeholder="Enter budget">
+            <a id="budget-btn" href="#"><i class="btn-plus fas fa-plus-circle"></i></a>
+          </div>
+        </div>
+
+        <div class="expense-container mlr-1">
+          <h2>Expense </h2>
+          <div class="input-seg mtb-1">
+            <form class="exp-form" action="#">
+                <label for="expense">$ </label>
+                <input class="input mr-1" id="expense" name="expense" type="number" placeholder="Enter expense" required>
+                <!-- <a href="#" id="expense-btn"><i class="fas fa-plus-circle"></i></a> -->
+                <select class="mr-1" name="expense-type" id="expense-type" required>
+                  <option value="Food">Food</option>
+                  <option value="Personal">Personal</option>
+                  <option value="Mandatory">Mandatory</option>
+                </select>
+                <button id="expense-btn" class="expense-btn" form="expense-type"><i class="btn-plus fas fa-plus-circle"></i></button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="expense-list bg-opaque">
+        <div class="expense-list-container m-1">
+          <h2 class="mb-1">Expenses </h2>
+          <ol class="list p-1">
+
+          </ol>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="data-container ml-1 bg-opaque p-1">
+      <div class="data-header">
+        <h1>Budget Report</h1>
+      </div>
+      <div class="data-body">
+        <div class="data">
+          <div class="data-budget data-segment p-1r">
+            <h3 class="ml-1">Monthly Budget</h3>
+            <p class="m-1">$ <span id="budget-value">0.00</span></p>
+          </div>
+          <div class="data-exp data-segment p-1r">
+            <h3 class="ml-1">Total Expense</h3>
+            <p class="m-1">$ <span id="budget-exp">0.00</span></p>
+          </div>
+          <div class="data-net data-segment p-1r">
+            <h3 class="ml-1">Remaining Budget</h3>
+            <p class="m-1">$ <span id="budget-diff">0.00</span></p>
+          </div>
+        </div>
+        <div class="data-chart">
+          <div class="data-percentages m-1">
+            <h3 class="ml-1" >Expense Summary: </h3>
+            <div class="data-item ml-1">
+                <i class="fas fa-utensils"></i><h3>Food: $</h3><span class="food-value">0.00</span><span class="food-percent"></span>
+            </div>
+            <div class="data-item ml-1">
+                <i class="fas fa-user"></i></i><h3>Personal: $</h3><span class="pers-value">0.00</span><span class="pers-percent"></span>
+            </div>
+            <div class="data-item ml-1">
+                <i class="fas fa-star"></i></i><h3>Mandatory: $</h3><span class="mand-value">0.00</span><span class="mand-percent"></span>
+            </div>
+          </div>
+          <div class="chart m-1">
+              <h3 class="p-1r" >Expense Distribution: </h3>
+              <div id="chartContainer" >
+
+              </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <script src="app.js"></script>
+ 
+</body>
+</html>
